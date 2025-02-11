@@ -328,7 +328,7 @@ def get_engine():
 
 
 if __name__ == "__main__":
-    API_KEY = 'RGAPI-79190ab9-eb9b-4abb-a486-cb694c20cc07'
+    API_KEY = 'RGAPI-79190ab9-eb9b-4abb-a486-cb694c20cc'
     REQUEST_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
     "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
@@ -338,7 +338,7 @@ if __name__ == "__main__":
     }
 
     DB_USER = 'root'
-    DB_PASSWORD = '!!good8236'
+    DB_PASSWORD = ''
     DB_HOST = 'localhost'
     DB_NAME = 'highrank_user'
 
