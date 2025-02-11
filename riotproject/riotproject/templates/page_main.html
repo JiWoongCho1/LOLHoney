@@ -1,0 +1,182 @@
+<!-- templates/champion.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>LoL Honey</title>
+    <style>
+        
+        body {
+            background-color: #212121;
+            color: white; /* 기본 텍스트 색상 흰색 */
+            margin: 0;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            
+            background-color: black; /* 노란색과 어울리는 밝은 색 */
+            color: #FFD700; /* 밝은 글씨색 */
+            font-size: 24px;
+            font-weight: bold;
+            margin : 0;
+        }
+        header img {
+            height: 60px; /* 이미지 크기 조정 */
+            margin-left: 10px; /* 텍스트와 이미지 사이 여백 */
+        }
+        hr {
+            height: 4px;
+            background: #FFFFFF; /* 선 색 */
+            margin: 0;
+            padding: 0; 
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .role-container {
+            display: flex;
+            justify-content: space-around; /* 아이템을 고르게 배치 */
+            margin-top: 20px;
+        }
+
+        .role {
+            text-align: center;
+            padding: 10px;
+            flex: 1;
+        }
+
+        /* 각 구분선 */
+        .role:not(:last-child) {
+            border-right: 5px solid #FFD700; /* 각 항목을 구분짓는 선 */
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        LOL.HONEY
+        <img src="{% static 'images/bee_happy.png' %}" alt="Bee Happy">
+    </header>
+    <hr>
+    
+    <div class="role-container">
+        <div class="role">탑
+            <br>
+        
+            <table border="1">
+                <tr>
+                    <th>이미지</th>
+                  <th>챔피언</th>
+                  <th>승률</th>
+                </tr>
+                {% for data in top_data %}
+                <tr>
+                    <td>
+                        <img src="{% static 'images/' %}{{ data.champion|lower }}.png" 
+                             alt="{{ data.champion }}" width="50">
+                    </td>
+                    <td>{{data.champion}}</td>
+                    <td>{{data.Win_rate}}</td>
+                  </tr>
+                  {% endfor%}
+              </table>
+        
+      
+        </div>
+
+        <div class="role">정글
+            <br>
+            <table border="1">
+                <tr>
+                    <th></th>
+                  <th>챔피언</th>
+                  <th>승률</th>
+                </tr>
+                {% for data in jg_data %}
+                <tr>
+                    <td>
+                        <img src="{% static 'images/' %}{{ data.champion|lower }}.png" 
+                             alt="{{ data.champion }}" width="50">
+                    </td>
+                    <td>{{data.champion}}</td>
+                    <td>{{data.Win_rate}}</td>
+                  </tr>
+                  {% endfor%}
+              </table>
+        </div>
+        <div class="role">미드
+            <br>
+        
+            <table border="1">
+                <tr>
+                    <th>이미지</th>
+                  <th>챔피언</th>
+                  <th>승률</th>
+                </tr>
+                {% for data in mid_data %}
+                <tr>
+                    <td>
+                        <img src="{% static 'images/' %}{{ data.champion|lower }}.png" 
+                             alt="{{ data.champion }}" width="50">
+                    </td>
+                    <td>{{data.champion}}</td>
+                    <td>{{data.Win_rate}}</td>
+                  </tr>
+                  {% endfor%}
+              </table>
+
+        </div>
+        <div class="role">원딜
+            <br>
+        
+            <table border="1">
+                <tr>
+                    <th>이미지</th>
+                  <th>챔피언</th>
+                  <th>승률</th>
+                </tr>
+                {% for data in bot_data %}
+                <tr>
+                    <td>
+                        <img src="{% static 'images/' %}{{ data.champion|lower }}.png" 
+                             alt="{{ data.champion }}" width="50">
+                    </td>
+                    <td>{{data.champion}}</td>
+                    <td>{{data.Win_rate}}</td>
+                  </tr>
+                  {% endfor%}
+              </table>
+
+        </div>
+        <div class="role">서폿
+            <br>
+        
+            <table border="1">
+                <tr>
+                    <th>이미지</th>
+                  <th>챔피언</th>
+                  <th>승률</th>
+                </tr>
+                {% for data in bot_data %}
+                <tr>
+                    <td>
+                        <img src="{% static 'images/' %}{{ data.champion|lower }}.png" 
+                             alt="{{ data.champion }}" width="50">
+                    </td>
+                    <td>{{data.champion}}</td>
+                    <td>{{data.Win_rate}}</td>
+                  </tr>
+                  {% endfor%}
+              </table>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
